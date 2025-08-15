@@ -76,7 +76,7 @@ function main() {
     writeFileSync(clang_format_file, "")
   }
 
-  const cmake_configure = `cmake -S "${src_dir}" -B ./build ${build_options} -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX="${libzmq_install_prefix}" -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_STATIC=ON -DBUILD_TESTS=OFF -DBUILD_SHARED=OFF -DWITH_DOCS=OFF -DWITH_LIBSODIUM=OFF -DWITH_LIBSODIUM_STATIC=OFF -DENABLE_CURVE=OFF -DWITH_TLS=OFF -DENABLE_WS=OFF`
+  const cmake_configure = `cmake -S "${src_dir}" -B ./build ${build_options} -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX="${libzmq_install_prefix}" -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_STATIC=ON -DBUILD_TESTS=OFF -DBUILD_SHARED=OFF -DWITH_DOCS=OFF -DWITH_LIBSODIUM=OFF -DWITH_LIBSODIUM_STATIC=OFF -DENABLE_CURVE=OFF -DWITH_TLS=OFF -DENABLE_WS=OFF -DCMAKE_POLICY_VERSION_MINIMUM=3.5`
   console.log(cmake_configure)
   exec(cmake_configure, execOptions)
 
